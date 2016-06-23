@@ -1,0 +1,19 @@
+{
+  "name": "iris-it/irispass-shared",
+  "license": "BSD",
+  "description": "Shared models / services",
+  "require": {
+    "laravel/framework": "5.2.*"
+  },
+  "authors": [
+    {
+      "name": "Alexandre",
+      "email": "alexandre.mangin@viacesi.fr"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Irisit\\IrispassShared\\": "src/"
+    }
+  }
+}

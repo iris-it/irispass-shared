@@ -1,2 +1,3 @@
 # irispass-shared
-Shared models
+
+Shared models for the projects irispass
