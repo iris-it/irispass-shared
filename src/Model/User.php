@@ -41,6 +41,6 @@ class User extends Authenticatable
      */
     public function getKeyName()
     {
-        return config_path('irispass.user_primary_key');
+        return config('irispass.user_primary_key');
     }
 }
