@@ -16,6 +16,10 @@ class IrispassSharedProvider extends ServiceProvider
         $this->publishes([
             __DIR__ . '/../migrations/' => database_path('migrations')
         ], 'migrations');
+
+        $this->publishes([
+            __DIR__ . '/../config/config.php' => config_path('irispass.php')
+        ], 'config');
     }
 
     /**

@@ -6,7 +6,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
-    
+
     /**
      * The attributes that are mass assignable.
      *
@@ -33,4 +33,14 @@ class User extends Authenticatable
         'resource_access' => 'json',
         'settings' => 'json'
     ];
+
+    /**
+     * Get the primary key for the model.
+     *
+     * @return string
+     */
+    public function getKeyName()
+    {
+        return config_path('irispass.user_primary_key');
+    }
 }
