@@ -15,7 +15,7 @@ class CreateRelationWebsitesOrganizations extends Migration
         //
 
         Schema::table('websites', function ($table) {
-            $table->integer('organization_id')->after('url')->unsigned()->nullable()->index();
+            $table->integer('organization_id')->unsigned()->nullable()->index();
             $table->foreign('organization_id')->references('id')->on('organizations')->onDelete('set null');
         });
     }

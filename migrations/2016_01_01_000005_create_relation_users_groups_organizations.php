@@ -14,7 +14,7 @@ class CreateRelationUsersGroupsOrganizations extends Migration
     {
         //
         Schema::table('users_groups', function ($table) {
-            $table->integer('organization_id')->after('path')->unsigned()->nullable()->index();
+            $table->integer('organization_id')->unsigned()->nullable()->index();
             $table->foreign('organization_id')->references('id')->on('organizations')->onDelete('set null');
         });
 
