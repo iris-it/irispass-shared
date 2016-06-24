@@ -45,6 +45,15 @@ class User extends Authenticatable
     }
 
     /**
+     * An user has one organization
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function organization()
+    {
+        return $this->hasOne('Irisit\IrispassShared\Model\Organization');
+    }
+
+    /**
      * An user can be in many groups
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
