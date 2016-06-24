@@ -3,7 +3,8 @@
   "license": "BSD",
   "description": "Shared models / services",
   "require": {
-    "laravel/framework": "5.2.*"
+    "laravel/framework": "5.2.*",
+    "league/flysystem-ziparchive": "^1.0"
   },
   "authors": [
     {
