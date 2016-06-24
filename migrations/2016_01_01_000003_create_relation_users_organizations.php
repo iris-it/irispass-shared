@@ -15,7 +15,7 @@ class CreateRelationUsersOrganizations extends Migration
         //
 
         Schema::table('organizations', function ($table) {
-            $table->integer('user_id')->after('is_active')->unsigned()->nullable()->index();
+            $table->integer('user_id')->unsigned()->nullable()->index();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('set null');
         });
 
