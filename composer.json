@@ -4,7 +4,8 @@
   "description": "Shared models / services",
   "require": {
     "laravel/framework": "5.2.*",
-    "league/flysystem-ziparchive": "^1.0"
+    "league/flysystem-ziparchive": "^1.0",
+    "guzzlehttp/guzzle": "~6.0"
   },
   "authors": [
     {

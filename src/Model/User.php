@@ -43,4 +43,14 @@ class User extends Authenticatable
     {
         return config('irispass.user_primary_key');
     }
+
+    /**
+     * An user can be in many groups
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function groups()
+    {
+        return $this->belongsToMany('Irisit\IrispassShared\Model\UserGroup', 'groups_users_pivot', 'user_id', 'group_id')->withTimestamps();
+    }
 }
