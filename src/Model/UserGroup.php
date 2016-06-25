@@ -28,17 +28,17 @@ class UserGroup extends Model
      */
     public function organization()
     {
-        return $this->belongsTo('App\Organization');
+        return $this->belongsTo('Irisit\IrispassShared\Model\Organization');
     }
 
     /**
-     * An os js group can have many users
+     * A group can have many users
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
     public function users()
     {
-        return $this->belongsToMany('App\User', 'groups_users_pivot', 'group_id', 'user_id')->withTimestamps();
+        return $this->belongsToMany('Irisit\IrispassShared\Model\User', 'groups_users_pivot', 'group_id', 'user_id')->withTimestamps();
     }
 
 }
