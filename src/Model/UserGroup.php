@@ -19,7 +19,7 @@ class UserGroup extends Model
      *
      * @var array
      */
-    protected $fillable = ['identifier', 'name'];
+    protected $fillable = ['name', 'realname', 'path', 'organization_uuid'];
 
     /**
      * An os js group belongs to an organization
@@ -28,17 +28,17 @@ class UserGroup extends Model
      */
     public function organization()
     {
-        return $this->belongsTo('Irisit\IrispassShared\Model\Organization');
+        return $this->belongsTo('App\Organization');
     }
 
     /**
-     * A group can have many users
+     * An os js group can have many users
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
     public function users()
     {
-        return $this->belongsToMany('Irisit\IrispassShared\Model\User', 'groups_users_pivot', 'group_id', 'user_id')->withTimestamps();
+        return $this->belongsToMany('App\User', 'groups_users_pivot', 'group_id', 'user_id')->withTimestamps();
     }
 
 }

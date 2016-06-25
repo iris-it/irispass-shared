@@ -16,8 +16,10 @@ class CreateUsersGroupsTable extends Migration
 
         Schema::create('users_groups', function (Blueprint $table) {
             $table->increments('id');
-            $table->text('identifier');
             $table->text('name');
+            $table->text('realname');
+            $table->text('path');
+            $table->uuid('organization_uuid');
             $table->timestamps();
         });
 
