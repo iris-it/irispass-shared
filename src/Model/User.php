@@ -50,7 +50,7 @@ class User extends Authenticatable
      */
     public function organization()
     {
-        return $this->hasOne('Irisit\IrispassShared\Model\Organization');
+        return $this->belongsTo('Irisit\IrispassShared\Model\Organization');
     }
 
     /**
