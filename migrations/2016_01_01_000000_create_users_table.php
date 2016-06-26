@@ -23,6 +23,7 @@ class CreateUsersTable extends Migration
             $table->string('resource_access');
             $table->longText('settings');
             $table->integer('organization_id');
+            $table->rememberToken();
             $table->timestamps();
         });
     }
