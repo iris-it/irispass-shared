@@ -60,8 +60,8 @@ class FlatCmService
 
         $path_to_directory = $this->container_path . $identifier;
 
-        //data\_extra\Header.php
-        $path_to_file = $path_to_directory . DIRECTORY_SEPARATOR . 'data' . DIRECTORY_SEPARATOR . '_extra' . DIRECTORY_SEPARATOR . 'Header.php';
+        //data\_extra\Header\page.php
+        $path_to_file = $path_to_directory . DIRECTORY_SEPARATOR . 'data' . DIRECTORY_SEPARATOR . '_extra' . DIRECTORY_SEPARATOR . 'Header'. DIRECTORY_SEPARATOR . 'page.php';
         $file_contents = file_get_contents($path_to_file);
         $file_contents = str_replace('{SITENAME}', $identifier, $file_contents);
         file_put_contents($path_to_file, $file_contents);

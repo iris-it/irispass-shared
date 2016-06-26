@@ -60,4 +60,9 @@ class Organization extends Model
         return $this->hasOne('Irisit\IrispassShared\Model\Website');
     }
 
+    public function licence()
+    {
+        return $this->belongsTo('Irisit\IrispassShared\Model\Licence');
+    }
+
 }
