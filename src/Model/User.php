@@ -48,6 +48,15 @@ class User extends Authenticatable
      * An user has one organization
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
+    public function provider()
+    {
+        return $this->hasOne('Irisit\IrispassShared\Model\UserProvider');
+    }
+
+    /**
+     * An user has one organization
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
     public function organization()
     {
         return $this->belongsTo('Irisit\IrispassShared\Model\Organization');
