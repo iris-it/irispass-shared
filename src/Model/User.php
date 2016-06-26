@@ -20,7 +20,8 @@ class User extends Authenticatable
         'family_name',
         'email',
         'resource_access',
-        'settings'
+        'settings',
+        'role_id'
     ];
 
 
@@ -43,6 +44,64 @@ class User extends Authenticatable
     {
         return config('irispass.user_primary_key');
     }
+
+    /**
+     * this assign roles to an user (obvious isn'it ?)
+     *
+     * @param $role
+     * @return \Illuminate\Database\Eloquent\Model
+     */
+    public function assignRole($role)
+    {
+        $role = Role::where('name', $role)->firstOrFail();
+
+        return $this->role()->associate($role)->save();
+    }
+
+    /**
+     * check if user has role
+     *
+     * @param $role
+     * @return bool
+     */
+    public function hasRole($role)
+    {
+        if (is_string($role)) {
+            return $this->role->name == $role;
+        }
+
+        return false;
+    }
+
+    /**
+     * check if user has role
+     *
+     * @param $permission
+     * @return bool
+     */
+    public function hasPermission($permission)
+    {
+        if (is_string($permission)) {
+            foreach ($this->role->permissions as $permissionRole) {
+                if ($permissionRole->name == $permission) {
+                    return true;
+                }
+            }
+        }
+
+        return false;
+    }
+
+    /**
+     * An user has many roles
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function role()
+    {
+        return $this->belongsTo('Irisit\IrispassShared\Model\Role');
+    }
+
 
     /**
      * An user has one organization
