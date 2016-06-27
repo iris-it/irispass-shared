@@ -31,6 +31,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $casts = [
+        'sub' => 'string',
         'resource_access' => 'json',
         'settings' => 'json'
     ];
